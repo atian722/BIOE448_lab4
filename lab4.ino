@@ -21,8 +21,8 @@ delayMicroseconds(10);
 digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 
-distanceCm = duration * (58);
-distanceInch = duration * (148);
+distanceCm = duration * (.017);
+distanceInch = duration * (.0067);
 Serial.print("Distance: ");
 Serial.print(distanceCm);
 Serial.print(" cm/");
