@@ -1,7 +1,10 @@
 const int trigPin = 11;
 const int echoPin = 12;
+const int redPin = 5;
+const int greenPin = 4;
 long duration;
 int distanceCm, distanceInch;
+long range;
 
 void setup() {
   // put your setup code here, to run once:
@@ -29,5 +32,16 @@ Serial.print(" cm/");
 Serial.print(distanceInch);
 Serial.println(" in");
 delay(1000);
+
+if (distanceCm < 10)
+{
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(redPin, LOW);
+}
+else {
+  digitalWrite(greenPin, LOW);
+  digitalWrite(redPin, HIGH);
+}
+
 }
 
